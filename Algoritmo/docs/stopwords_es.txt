@@ -8,7 +8,9 @@ ante
 antes
 aquel
 así
+aun
 cada
+casi
 como
 con
 contra
@@ -170,6 +172,7 @@ mayor
 más
 me
 menor
+menos
 mi
 mí
 mía
@@ -247,6 +250,7 @@ suyas
 suyo
 suyos
 también
+tan
 tanto
 te
 tendrá

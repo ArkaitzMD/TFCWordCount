@@ -41,15 +41,15 @@ Con una noticia de un diario obtenemos:
 
 ```
 <<Single-Tokens>>
-Unique: 303
-Total: 441
+Unique: 302
+Total: 440
 Ratio: 0.69
 Most Common (10):
 [('seguridad', 9), ('tipo', 8), ('empresa', 7), ('afectado', 6), ('ciberseguridad', 6), ('experto', 6), ('director', 5), ('ordenador', 5), ('Telefónica', 4), ('compañía', 4)]
 
 <<Bigram-Tokens>>
-Unique: 417
-Total: 440
+Unique: 416
+Total: 439
 Ratio: 0.95
 Most Common (10):
 [(('ciberseguridad', 'empresa'), 3), (('ciberataque', 'sufrido'), 2), (('sufrido', 'viernes'), 2), (('compañía', 'español'), 2), (('tipo', 'virus'), 2), (('moneda', 'virtual'), 2), (('director', 'socio'), 2), (('director', 'empresa'), 2), (('Grupo', 'ciberseguridad'), 2), (('seguridad', 'total'), 2)]
@@ -69,18 +69,18 @@ Si analizamos el libro **_El origen de las especies_** de Charles Darwin obtenem
 
 ```
 <<Single-Tokens>>
-Unique: 6809
-Total: 84652
+Unique: 6805
+Total: 83212
 Ratio: 0.08
 Most Common (10):
 [('especie', 1835), ('forma', 752), ('caso', 649), ('parte', 639), ('diferente', 631), ('modo', 612), ('natural', 541), ('vez', 538), ('variedad', 510), ('selección', 493)]
 
 <<Bigram-Tokens>>
-Unique: 58386
-Total: 84651
+Unique: 57675
+Total: 83211
 Ratio: 0.69
 Most Common (10):
-[(('natural', 'selección'), 373), (('especie', 'género'), 121), (('distinto', 'especie'), 96), (('especie', 'variedad'), 94), (('condición', 'vida'), 91), (('animal', 'planta'), 80), (('dos', 'especie'), 75), (('especie', 'individuo'), 68), (('diferente', 'especie'), 66), (('especie', 'nueva'), 59)]
+[(('natural', 'selección'), 373), (('especie', 'género'), 123), (('distinto', 'especie'), 98), (('especie', 'variedad'), 94), (('condición', 'vida'), 91), (('animal', 'planta'), 80), (('dos', 'especie'), 75), (('especie', 'individuo'), 68), (('diferente', 'especie'), 67), (('especie', 'nueva'), 59)]
 
 <<Compound-Tokens>>
 Unique: 213
@@ -89,3 +89,10 @@ Ratio: 0.43
 Most Common (10):
 [('América del Sur', 46), ('América del Norte', 33), ('Nueva Zelanda', 26), ('Estados Unidos', 24), ('Archipiélago Malayo', 15), ('Mundo Antiguo', 15), ('Gran Bretaña', 14), ('Historia Natural', 14), ('Fritz Müller', 12), ('Míster Mivart', 9)]
 ```
+<p align="center">
+  <img src="https://github.com/ubarredo/TextProcessing/blob/master/plots/s_tokens.png" width="600">
+  <img src="https://github.com/ubarredo/TextProcessing/blob/master/plots/b_tokens.png" width="700">
+  <img src="https://github.com/ubarredo/TextProcessing/blob/master/plots/c_tokens.png" width="500">
+</p>
+
+
