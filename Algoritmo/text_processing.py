@@ -9,7 +9,7 @@ import pandas as pd
 def import_files(tx_path, lm_path, sw_path, vb_path):
     """Importacion de los ficheros con los datos para el analisis."""
     
-    # o_text: string de texto original.
+    # o_text: string del texto original.
     with open(tx_path, 'r', encoding='utf8') as current_file:
         o_text = current_file.read()
         
@@ -32,9 +32,9 @@ def single_tokens(o_text):
     """Tokenizacion del texto en palabras individuales."""
     
     # Se crea un string filtrado f_text a partir del string original o_text.
-    # unicamente incluiremos los caracteres alfabeticos y los espacios, 
-    # para el resto de caracteres introducimos la cadena ' . ' que actuara 
-    # de separador.
+    # Unicamente incluiremos los caracteres alfabeticos y los espacios, para el 
+    # resto de caracteres introducimos la cadena ' . ' que actuara de 
+    # separador.
     f_text = ''
     for i in o_text:      
         if i.isalpha() or i.isspace():
@@ -112,41 +112,43 @@ def compound_tokens(o_text):
         else:
             f_text += ' . '
             
-    # Creamos una lista s1 que solo incluira las palabras en mayuscula y las 
-    # que se encuentren en la lista de joiners. Para el resto introducimos un 
-    # '.' que nos servira de separador.
-    s1 = []
+    # Creamos una lista f_list que solo incluira las palabras en mayuscula y 
+    # las que se encuentren en la lista de joiners. Para el resto introducimos 
+    # un punto que nos servira de separador.
+    f_list = []
     for i in f_text.split():
         if i.lower() in joiners:
-            s1.append(i.lower())
+            f_list.append(i.lower())
         elif i.istitle():
-            s1.append(i)
+            f_list.append(i)
         else:
-            s1.append('.')
+            f_list.append('.')
             
-    # Creamos otra lista s2 quedandonos unicamente con los elementos de la 
-    # lista s1 que contengan mas de una palabra en mayuscula.
-    s2 = []
-    for i in ' '.join(s1).split('.'):
+    # Redefinimos la lista uniendola con espacios y dividiendola por puntos.
+    f_list = ' '.join(f_list).split('.') 
+    
+    # Creamos otra lista c_tokens quedandonos unicamente con los elementos de 
+    # la lista f_list que contengan mas de una palabra en mayuscula.
+    c_tokens = []
+    for i in f_list:
         n = 0
         for j in i.split():
             if j.istitle():
                 n += 1
         if n > 1:
-            s2.append(i.strip())
-            
-    # En la lista c_tokens incluiremos los elementos de s2 asegurandonos de 
-    # que empiezan y finalizan con una palabra en mayuscula.
-    c_tokens = []
-    for i in s2:
-        w = i.split()
+            c_tokens.append(i.strip())
+        
+    # Limpiamos los elementos de c_tokens asegurandonos de que empiezan y 
+    # finalizan con una palabra en mayuscula.
+    for i, j in enumerate(c_tokens):
+        w = j.split()
         while not w[0].istitle():
             if not w[0].istitle():
                 del w[0]
         while not w[-1].istitle():
             if not w[-1].istitle():
                 del w[-1]
-        c_tokens.append(' '.join(w))
+        c_tokens[i] = ' '.join(w)
 
     return c_tokens
 
